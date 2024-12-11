@@ -17,11 +17,13 @@ useEffect(() =>{
 fetch(`https://raw.githubusercontent.com/JBreitenbr/Jason/refs/heads/main/TracksData/${bandName}.json`)
       .then((res) => res.json())
       .then((data) => setTracks(data))
-  },[bandName]);const bandTracks=
+  },[bandName]);
+
+const bandTracks=
 tracks.map(
 (item,index) => {
 return (
- <><li key={item.track}><div className="ml-4 mb-4"><img src={item.album_pic} className="h-20 w-20 sm:h-32 sm:w-32" style={{border:"1px solid #0f172a"}}/><div className="small-text sm:text-xl md:text-2xl xl:text-3xl mt-4 text-white">{item.track}</div><div>{item.album_date}</div><div>{item.album_type}</div><div className="text-xs">{item.genres}</div><div style={{fontSize:"6px"}} ><ol>{item.album_tracks.split("/").map((item)=><li>{item}</li>)}</ol></div></div></li></>)})
+ <><li key={item.track}><div className="ml-4 mb-4"><img src={item.album_pic} className="h-20 w-20 sm:h-32 sm:w-32" style={{border:"1px solid #0f172a"}}/><div className="small-text sm:text-xl md:text-2xl xl:text-3xl mt-4 text-white">{item.track}</div><div>{item.album_date}</div><div>{item.album_type}</div><div className="text-xs">{item.genres}</div><div style={{fontSize:"6px"}} ><ol>{item.album_tracks.split(")/").map((item,index)=><li>{item+")"}</li>)}</ol></div></div></li></>)})
   return (
     <div className="generale bg-slate-500" style={{position:"relative"}}>
      <div className="bg-slate-300 flex flex-col" style={{position: "sticky",top:"0px",width:"100vw"}}>
