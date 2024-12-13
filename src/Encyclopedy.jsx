@@ -14,7 +14,7 @@ let [letter, setLetter]=useState()
   }
 
 useEffect(() =>{
-fetch(`https://raw.githubusercontent.com/JBreitenbr/Jason/refs/heads/main/SongsData/${bandName}.json`)
+fetch(`https://raw.githubusercontent.com/JBreitenbr/Jason/refs/heads/main/TracksData/${bandName}.json`)
       .then((res) => res.json())
       .then((data) => setTracks(data))
   },[bandName]);
