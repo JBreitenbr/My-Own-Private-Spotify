@@ -24,7 +24,7 @@ const bandTracks=
 tracks.map(
 (item,index) => {
   let songs=item.album_tracks.split(")/"); let med=Math.floor(songs.length/2);
-  let songs1=songs.slice(0,med+1); let songs2=songs.slice(med+1);
+  let songs1=songs.slice(0,med+songs.length%2); let songs2=songs.slice(med+songs.length%2);
 return (
  <><li key={item.track}><div className="ml-4 mb-4">
 <Tooltip id={`my-anchor-element-${index}`}>
