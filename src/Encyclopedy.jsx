@@ -15,7 +15,7 @@ let [letter, setLetter]=useState()
   }
 
 useEffect(() =>{
-fetch(`https://raw.githubusercontent.com/JBreitenbr/Spotify-Data/refs/heads/main/TracksData/${bandName}.json`)
+fetch(`https://raw.githubusercontent.com/JBreitenbr/Spoti-Scraped/refs/heads/main/TracksData/${bandName}.json`)
       .then((res) => res.json())
       .then((data) => setTracks(data))
   },[bandName]);
